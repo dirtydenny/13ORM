@@ -36,12 +36,13 @@ Product.init(
     },
     category_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        isNumeric: true,
-      },    
+      allowNull: true,
+      references: {
+        model: "category",
+        key: "id",
+      },
     },
-  }
+  },
   {
     sequelize,
     timestamps: false,

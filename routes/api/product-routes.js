@@ -5,18 +5,37 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // get all products
 router.get('/', (req, res) => {
+  Product.findAll({
+    include: [Category, {
+      model: Tag, through: ProductTag
+    } ],    
+  })
+        
+      .then(products => res.json(products))
+      .catch((err) => res.status(500).json(err));
+});
   // find all products
   // be sure to include its associated Category and Tag data
-});
 
 // get one product
 router.get('/:id', (req, res) => {
+  Product.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [Category],
+  })
+    .then((product) => res.json(product))
+    .catch((err) => res.status(400).json(err));
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
 });
 
 // create new product
 router.post('/', (req, res) => {
+  Product.create(req.body)
+    .then((product) => res.json(product))
+    .catch((err) => res.status(400).json(err));
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -90,6 +109,13 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
+  Product.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((product) => res.json(product))
+    .catch((err) => res.status(400).json(err));
   // TODO delete one product by its `id` value
 });
 
