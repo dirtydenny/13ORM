@@ -14,9 +14,6 @@ router.get('/', (req, res) => {
       .then(products => res.json(products))
       .catch((err) => res.status(500).json(err));
 });
-  // find all products
-  // be sure to include its associated Category and Tag data
-
 // get one product
 router.get('/:id', (req, res) => {
   Product.findOne({
