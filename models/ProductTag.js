@@ -15,7 +15,9 @@ ProductTag.init(
     },
     product_id: {
       type:DataTypes.INTEGER,
-      
+      references: {
+        model: 'driver',
+        key: 'id',
      
 
     }
