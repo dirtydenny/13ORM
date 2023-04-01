@@ -22,15 +22,18 @@
 
   ## Description
 
-  The purpose of the project was to provide the user with an easily searchabble mallabel to  to actively work on their ecomm store.   at t
-
+  The purpose of the project was to provide the user with an easy tool to manage thier E-Comm platform.  
+  The database contains three main areas to change:  Categories, Products and Ids.
+  Functionality for the program includes searching, adding, altering and deleting.
+   
   ## Installation
 
   npm i
 
   ## Usage
 
-  Please start by installing the needed packages with NPM i.  AFter installing the needed packages, run NPM start to run the program.
+  npm start
+  
 
   ## Tests
 
@@ -38,6 +41,6 @@
 
   ## Questions
 
-  Thank you for using my application.  Please submit questions to dallen7@socal.rr.com.  Also, visit me at 
-    [dirtydenny](https://github.com/dirtydenny/) to see my other programs.
+  Thank you for using my application.  Please submit questions to dallen7@socal.rr.com.  
+  Also, visit me on Github at [dirtydenny](https://github.com/dirtydenny/) to see my other programs.
 
