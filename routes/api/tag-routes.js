@@ -5,9 +5,6 @@ const { Tag, Product, ProductTag } = require('../../models');
 // Find all tags.
 router.get('/', (req, res) => {
   Tag.findAll({
-    where: {
-      id: req.params.id,
-    },
     include: [
       {
         model: Product,
@@ -37,7 +34,7 @@ router.get('/:id', (req, res) => {
 //Create a new tag by it "id" value.
 router.post('/', (req, res) => {
   Tag.create(req.body)
-    .then((tag) => res.json(tag))
+    .then((tag) => res.status(200).json(tag))
     .catch((err) => res.status(400).json(err));
 });
 // update tag's name by its `id` value.
