@@ -40,7 +40,7 @@
 
   none
   
-  ## Deomstration
+  ## Demonstration
   
   insert video link here
 
